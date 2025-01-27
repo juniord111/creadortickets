@@ -173,7 +173,7 @@ input[type="email"] {
 }
 
 button {
-    background-color: #d32f2f; /* Botón rojo */
+    background-color: hsl(7, 88%, 67%); 
     color: #ffffff;
     border: none;
     padding: 10px 20px;
@@ -201,7 +201,7 @@ input.error {
 
 /* Oculto Section */
 .oculto {
-    display: none; /* Ocultar por defecto */
+    display: none; 
     flex-direction: column;
     align-items: center;
     color: white;
@@ -247,8 +247,8 @@ input.error {
     background-position: center;
     padding: 20px;
     border-radius: 10px;
-    width: 100%; /* Ancho completo */
-    max-width: 600px; /* Máximo ancho */
+    width: 100%;
+    max-width: 600px;
     min-height: 600px;
     margin-top: -120px;
 }
@@ -333,33 +333,22 @@ input.error {
 @media (max-width: 414px) {
 
     body {
-        /* Establecemos las imágenes como fondo */
         background-image: url('/images/background-mobile.png'),
                           url('../images/pattern-lines.svg'),
                           url('/images/pattern-circle.svg'),
                           url('/images/pattern-squiggly-line-bottom-mobile-tablet.svg');
-        
-        /* Posicionamos cada imagen */
         background-position: center, top, right -250px center, bottom left; 
-        
-        /* Ajustamos el tamaño de cada imagen */
         background-size: cover, contain, 500px 150px, 250px 150px;
-    
-        /* Evitamos que se repitan las imágenes */
         background-repeat: no-repeat, no-repeat, no-repeat, no-repeat;
-    
-        /* Esto ayuda a que las imágenes se mezclen si quieres */
-        background-blend-mode: lighten; /* Otras opciones pueden ser 'multiply', 'screen', etc. */
+        background-blend-mode: lighten; 
     
         margin: 0;
         display: flex;
         justify-content: center;
         align-items: center;
-        min-height: 100vh; /* Esto hace que el body ocupe toda la altura de la ventana */
+        min-height: 100vh; 
         color: #ffffff;
         padding: 20px;
-    
-        /* Agregar fondo fijo si es necesario */
         background-attachment: fixed;
     }
      .oculto{
@@ -388,8 +377,8 @@ input.error {
     background-position: left;
     padding: 20px;
     border-radius: 10px;
-    width: 100%; /* Ancho completo */
-    max-width: auto; /* Máximo ancho */
+    width: 100%; 
+    max-width: auto; 
     height: 900px;
     margin-top: -100%;
     

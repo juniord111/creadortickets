@@ -12,13 +12,13 @@ const ocultoAvatar = document.querySelector(".avatar"); // Imagen en la sección
 const rotateElement = document.querySelector(".rotate"); // Párrafo para ID aleatorio
 const dateElement = document.querySelector(".date"); // Párrafo para fecha actual
 
-let uploadedImageURL = ""; // Variable para almacenar la URL de la imagen subida
+let uploadedImageURL = ""; 
 
 // Evento para validar y subir imagen
 inputFile.addEventListener("change", validateAndUpload);
 
 function validateAndUpload() {
-  const file = inputFile.files[0]; // Archivo seleccionado
+  const file = inputFile.files[0]; 
   if (!file) {
     alert("No file selected.");
     return;
@@ -28,7 +28,7 @@ function validateAndUpload() {
   const validTypes = ["image/jpeg", "image/png"];
   if (!validTypes.includes(file.type)) {
     alert("Only JPG or PNG files are allowed.");
-    inputFile.value = ""; // Limpiar input
+    inputFile.value = ""; 
     return;
   }
 
@@ -36,15 +36,15 @@ function validateAndUpload() {
   const maxSize = 500 * 1024; // 500KB en bytes
   if (file.size > maxSize) {
     alert("File size exceeds 500KB.");
-    inputFile.value = ""; // Limpiar input
+    inputFile.value = ""; 
     return;
   }
 
   // Si pasa las validaciones, mostrar la imagen como fondo
   uploadedImageURL = URL.createObjectURL(file);
   imageView.style.backgroundImage = `url(${uploadedImageURL})`;
-  imageView.textContent = ""; // Limpiar texto
-  imageView.style.border = "none"; // Quitar borde
+  imageView.textContent = ""; 
+  imageView.style.border = "none";
 }
 
 // Evento para manejar el envío del formulario

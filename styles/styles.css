@@ -175,6 +175,7 @@ input[type="email"] {
 button {
     background-color: hsl(7, 88%, 67%); 
     color: black;
+    font-weight: bold;
     border: none;
     padding: 10px 20px;
     font-size: 1rem;

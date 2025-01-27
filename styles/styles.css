@@ -1,0 +1,486 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inconsolata', monospace;
+}
+
+/* Body */
+body {
+    /* Establecemos las imágenes como fondo */
+    background-image: url('/images/background-desktop.png'),
+                      url('../images/pattern-lines.svg'),
+                      url('/images/pattern-circle.svg'),
+                      url('/images/pattern-squiggly-line-bottom-desktop.svg');
+    
+    /* Posicionamos cada imagen */
+    background-position: center, top, right 50px center, bottom left; 
+    
+    /* Ajustamos el tamaño de cada imagen */
+    background-size: cover, contain, 500px 200px, 500px 200px;
+
+    /* Evitamos que se repitan las imágenes */
+    background-repeat: no-repeat, no-repeat, no-repeat, no-repeat;
+
+    /* Esto ayuda a que las imágenes se mezclen si quieres */
+    background-blend-mode: lighten; /* Otras opciones pueden ser 'multiply', 'screen', etc. */
+
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* Esto hace que el body ocupe toda la altura de la ventana */
+    color: #ffffff;
+    padding: 20px;
+
+    /* Agregar fondo fijo si es necesario */
+    background-attachment: fixed;
+}
+
+
+
+/* Container */
+.container {
+    border-radius: 10px;
+    max-width: 600px;
+    width: 100%;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    z-index: 10;
+}
+
+/* Text Section */
+.text {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.text h1 {
+    font-size: 1.8rem;
+    margin: 10px 0;
+    color: white; /* Azul vibrante */
+}
+
+.text p {
+    font-size: 1rem;
+    color: #bbbbbb;
+}
+
+.text-img img {
+    width: 120px;
+    margin-bottom: 20px;
+}
+
+/* Formulario */
+.form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+label {
+    font-weight: bold;
+    font-size: 0.9rem;
+    color: #ffffff;
+    display: block;
+    margin-bottom: 5px;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #444;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    color: #ffffff;
+    background-color: hsla(0, 0%, 100%, 0.055);
+}
+
+input:focus {
+    outline: none;
+    border-color: #1a73e8;
+    box-shadow: 0 0 5px rgba(26, 115, 232, 0.5);
+}
+
+/* Drop Area */
+#drop-area {
+    background-color: hsla(0, 0%, 100%, 0.055);
+    border: 2px dashed #555;
+    border-radius: 8px;
+    padding: 20px;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#drop-area:hover {
+    background-color: #3a3a3a;
+}
+
+#drop-area img {
+    width: 50px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+#drop-area p {
+    font-size: 0.9rem;
+    color: #bbbbbb;
+}
+
+#img-view {
+    width: 100%;
+    height: 100px; /* Ajusta según el tamaño que quieras para el contenedor */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: background-image 0.3s ease;
+}
+
+/* Required Information */
+.requised {
+    display: flex;
+    font-size: 0.9rem;
+    color: #aaaaaa;
+    gap: 10px;
+    align-items: center;
+}
+
+.requised img {
+    width: 20px;
+}
+
+/* Input Fields */
+input[type="text"],
+input[type="email"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #444;
+    border-radius: 5px;
+    background-color: hsla(0, 0%, 100%, 0.055);
+    color: white;
+}
+
+button {
+    background-color: #d32f2f; /* Botón rojo */
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #b71c1c;
+}
+/* Estilo para los campos con errores */
+input.error {
+    border: 2px solid red;
+  }
+  
+  .error-message {
+    color: red;
+    font-size: 12px;
+    margin-top: 5px;
+  }
+
+
+
+/* Oculto Section */
+.oculto {
+    display: none; /* Ocultar por defecto */
+    flex-direction: column;
+    align-items: center;
+    color: white;
+    padding: 30px;
+    border-radius: 15px;
+    text-align: center;
+}
+
+/* Títulos y texto */
+.oculto .text img {
+    width: 100px;
+    margin-bottom: 20px;
+}
+
+.oculto h2 {
+    font-size: 1.5rem;
+    margin: 10px 0;
+    color: white; 
+}
+
+.oculto p {
+    text-align: center;
+    font-size: 1rem;
+    color: #bbbbbb;
+    margin: 10px 0;
+}
+.nameSubmit{
+    background: linear-gradient(90deg, hsl(7, 86%, 67%), hsl(0, 0%, 100%));
+    background-clip: text;
+    color: transparent;
+}
+
+#emailSubmit{
+    color: hsl(7, 88%, 67%);
+}
+/* Información del ticket */
+.img-information {
+    display: flex;
+    flex-direction:column;
+    background: url(../images/pattern-ticket.svg);
+    background-size:100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    padding: 20px;
+    border-radius: 10px;
+    width: 100%; /* Ancho completo */
+    max-width: 600px; /* Máximo ancho */
+    min-height: 600px;
+    margin-top: -120px;
+}
+.text-oculto h2{
+    font-size: 60px;
+
+}
+
+.text-oculto p{
+  font-size: 1.2em;
+}
+.one-information{
+  margin-top: 35%;
+  margin-right:50%;
+}
+
+.one-information img {
+    width: 200px;
+    height: 100px;
+}
+
+.one-information p{
+   margin-top: -10%;
+}
+.second-information{
+    display: flex;
+    flex-direction: row;
+    margin-top: 13%;  
+}
+.second-information .avatar {
+    width: 60px;
+    height: 60px;
+    border-radius: 5px;
+    margin-right: 10px;   
+}
+.names{
+    display: flex;
+    flex-direction: column;
+    margin-top:5px;
+}
+.names p{
+    margin-top: -1px;
+}
+
+
+
+.github{
+    display: flex;
+    flex-direction:row;
+    
+}
+.separador{
+    display: flex;
+}
+
+
+.githubName{
+    margin-top:2px;
+}
+
+.img-information p {
+    font-size: 0.9rem;
+    color: white;
+}
+
+.img-information .githubName {
+    font-size: 1rem;
+    font-weight: bold;
+    color: #ffffff;
+}
+
+.ultima{
+    display: flex;
+    justify-content: end;
+    margin-top: -25%;
+
+}
+.rotate{
+    transform: rotate(-90deg);
+}
+/* Responsiveness */
+@media (max-width: 414px) {
+
+    body {
+        /* Establecemos las imágenes como fondo */
+        background-image: url('/images/background-mobile.png'),
+                          url('../images/pattern-lines.svg'),
+                          url('/images/pattern-circle.svg'),
+                          url('/images/pattern-squiggly-line-bottom-mobile-tablet.svg');
+        
+        /* Posicionamos cada imagen */
+        background-position: center, top, right -250px center, bottom left; 
+        
+        /* Ajustamos el tamaño de cada imagen */
+        background-size: cover, contain, 500px 150px, 250px 150px;
+    
+        /* Evitamos que se repitan las imágenes */
+        background-repeat: no-repeat, no-repeat, no-repeat, no-repeat;
+    
+        /* Esto ayuda a que las imágenes se mezclen si quieres */
+        background-blend-mode: lighten; /* Otras opciones pueden ser 'multiply', 'screen', etc. */
+    
+        margin: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh; /* Esto hace que el body ocupe toda la altura de la ventana */
+        color: #ffffff;
+        padding: 20px;
+    
+        /* Agregar fondo fijo si es necesario */
+        background-attachment: fixed;
+    }
+     .oculto{
+        height:700px;
+     }
+
+    .text h1 {
+        font-size: 1.4rem;
+    }
+    
+    .form {
+        gap: 10px;
+    }
+    .oculto h2 {
+    width: 100%;
+    font-size: 2.5rem;
+    margin: 20px 0;
+    color: white; 
+}
+.img-information {
+    display: flex;
+    flex-direction:column;
+    background: url(../images/pattern-ticket.svg);
+    background-size:100%;
+    background-repeat: no-repeat;
+    background-position: left;
+    padding: 20px;
+    border-radius: 10px;
+    width: 100%; /* Ancho completo */
+    max-width: auto; /* Máximo ancho */
+    height: 900px;
+    margin-top: -100%;
+    
+}
+.one-information{
+    margin-top: 240px;
+    margin-left: -15px;
+     margin-bottom: 5%;
+  }
+  
+  .one-information img {
+      width: 100px;
+      height: auto;
+
+  }
+  
+  .one-information p{
+     margin-top: 2%;
+  }
+  .second-information{
+      display: flex;
+      flex-direction: row;
+      margin-top: 0;     
+      font-size: 0.7em;
+      margin-left: -15px;
+  }
+  .second-information .avatar {
+      width: 35px;
+      height: 35px;
+      border-radius: 5px;
+      margin-right:5px;
+  }
+  .names{
+      display: flex;
+      flex-direction: column;
+      margin-top:2px;
+      
+  }
+  .names p{
+      margin-top: 2px;
+      margin-left: -10px;
+  }
+  
+  
+  .nameSubmit{
+    font-size: 1em;
+  }
+  .github{
+      display: flex;
+      flex-direction:row;
+  }
+
+  .github-img{
+    width: 10px !important;
+    height: 10px;
+    padding: 50;
+  }
+
+ 
+  .separador{
+      display: flex;
+      margin-top: -6px;
+  }
+  
+  
+  .githubName{
+      font-size: 1em !important;
+  }
+  
+  .img-information p {
+      font-size: 0.7rem;
+      color: white;
+  }
+  
+  .img-information .githubName {
+      font-size: 1rem;
+      font-weight: bold;
+      color: #ffffff;
+  }
+  
+  .ultima{
+      display: flex;
+      justify-content: end;
+      margin-top: -60px;
+      margin-right: -30px;
+  
+  }
+  .rotate{
+      transform: rotate(-90deg);
+  }
+
+
+}
+
